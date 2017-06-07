@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gxzy/!svn/ver/13094/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin
+END
+RaiseWxOrderController.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/gxzy/!svn/ver/12450/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/RaiseWxOrderController.java
+END
+AwardRecord4WxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/gxzy/!svn/ver/12355/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/AwardRecord4WxController.java
+END
+RaiseWxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/gxzy/!svn/ver/12450/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/RaiseWxController.java
+END
+JdMaterialAPIController.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/gxzy/!svn/ver/13094/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/JdMaterialAPIController.java
+END
+PrizeRecordWxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/gxzy/!svn/ver/12363/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/PrizeRecordWxController.java
+END
+RaiseMsq4WxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/RaiseMsq4WxController.java
+END
+WxFans4WxController.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/gxzy/!svn/ver/12361/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/controller/weixin/WxFans4WxController.java
+END

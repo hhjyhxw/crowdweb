@@ -1,0 +1,167 @@
+package com.luckcloud.h5.common;
+
+import java.net.URLEncoder;
+import java.util.Date;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONObject;
+
+import org.apache.log4j.Logger;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import com.luckcloud.h5.consts.WxConst;
+import com.luckcloud.h5.dto.BaseDto;
+import com.luckcloud.h5.form.BaseForm;
+import com.luckcloud.h5.form.WxFansForm;
+import com.luckcloud.h5.model.WxFans;
+import com.luckcloud.h5.service.WxFansService;
+import com.luckcloud.h5.util.MD5Util;
+import com.luckcloud.h5.util.PropertyUtil;
+import com.luckcloud.h5.util.ThreeDES;
+import com.luckcloud.h5.wx.util.CommonUtil;
+
+public class GetOpenidInterceptor extends HandlerInterceptorAdapter {
+	
+	private static Logger logger = Logger.getLogger(GetOpenidInterceptor.class); 
+	
+	private static WxFansService wxFansService = new WxFansService();
+	
+	private static String[] NOFILTERS = new String[] {"r_f_p"};
+
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		
+				Object baseFormobj = request.getSession().getAttribute("baseForm");
+//				//1、
+				if (null == baseFormobj) { // 未登录
+					StringBuffer sburl = new StringBuffer();
+					sburl.append(request.getScheme() + "://"+request.getHeader("host")+request.getRequestURI()+"?" + request.getQueryString());
+					logger.error("请求URL :  " + sburl.toString());
+					logger.error("请求域名" + request.getHeader("host"));
+					//2、从url上获取openid
+					String openid = request.getParameter("openid");
+					logger.error("从url上获取到的openid="+openid);
+					if(openid!=null && !"".equals(openid)){
+						 String encryOpenid = ThreeDES.encode(openid.getBytes());
+						 String sign = MD5Util.encode2hex(encryOpenid);
+						 logger.error("openid="+openid+"&encryOpenid="+encryOpenid+"&sign="+sign);
+						
+						 BaseForm baseForm = new BaseForm();
+						 baseForm.setEncryOpenid(encryOpenid);
+						 baseForm.setSign(sign);
+						 baseForm.setOpenid(openid);
+						 request.getSession().setAttribute("baseForm",baseForm);
+						 return true;
+					}	
+					//重新到微信服务器获取openid	
+					String code = request.getParameter("code");
+					String appid =  PropertyUtil.getString("appid");
+					String appsecret = PropertyUtil.getString("appsecret");
+					logger.error("从url上获取到的code="+code);
+					if (code==null || "".equals(code)) {
+						logger.error("重新奥斯认证");
+						logger.error("appid==="+appid);
+						String authUrl = WxConst.FANS_GET_CODE.replace("APPID",appid).replace("REDIRECT_URI",URLEncoder.encode(sburl.toString(), "UTF-8"))
+								.replace("SCOPE", "snsapi_userinfo");
+//								.replace("SCOPE", "snsapi_base");
+						 response.sendRedirect(authUrl);
+						 return false;
+					}else{
+						logger.error("code已存在...到微信后台获取openid...");
+						logger.error("appid="+appid+"&appsecret="+appsecret+"&code="+code);
+						    String requestUrl = WxConst.OAUTH2_ACCESSTOKEN_URL.replace("APPID", appid).replace("SECRET", appsecret).replace("CODE", code);
+						JSONObject jsonObject = CommonUtil.httpRequest(requestUrl, "GET",null); // 获取网页授权凭证
+						logger.error("jsonObject=="+jsonObject);
+						if (null == jsonObject || !jsonObject.containsKey("openid")) {
+							logger.error("OpenId 获取失败,jsonObject为空");
+							return false;
+						}
+						if (!(jsonObject == null) && null != jsonObject.getString("openid")) {
+							logger.error("JSONOBJ:" + jsonObject.toString());
+							String access_token = jsonObject.getString("access_token");
+							 openid = jsonObject.getString("openid");
+							 //根据openid 和 access_token 获取用户基本信息
+							 String userInfoUrl = WxConst.USER_INFO.replace("ACCESS_TOKEN", access_token).replace("OPENID", openid);
+							 JSONObject userInfojsonObject = CommonUtil.httpRequest(userInfoUrl, "GET",null); // 获取用户信息
+							 if (!(userInfojsonObject == null) && null != userInfojsonObject.getString("openid")) {
+								WxFansForm wxFansForm = new WxFansForm();
+							 	WxFans wxFans = new WxFans();
+							 	wxFans.setCreateTime(new Date());
+							 	wxFans.setHeadPhotoUrl(userInfojsonObject.get("headimgurl")!=null?userInfojsonObject.get("headimgurl").toString():null);
+							 	wxFans.setHeadUrl(wxFans.getHeadPhotoUrl());
+							 	wxFans.setNickName(userInfojsonObject.get("nickname")!=null?userInfojsonObject.get("nickname").toString():"无");
+							 	wxFans.setOpenId(openid);
+							 	wxFans.setPerfectStatus(0);
+							 	wxFans.setSmokeBean(0L);
+							 	wxFans.setSex(userInfojsonObject.get("sex")!=null?new Long(userInfojsonObject.get("sex").toString()):0L);
+							 	wxFans.setStatus(1L);
+							 	wxFans.setVisitConfirm("1");
+							 	wxFansForm.setWxFans(wxFans);
+							 	BaseDto baseDto = wxFansService.saveFans(wxFansForm);
+							 	if("10000".equals(baseDto.getResultCode())){
+							 		logger.error(baseDto.getErrorMsg());
+							 	}
+							 	// 检查用户是否已经存在，如果存在则更新，不存在保存
+							 }
+							 
+							 String encryOpenid = ThreeDES.encode(openid.getBytes());
+							 String sign = MD5Util.encode2hex(encryOpenid);
+							 logger.error("openid="+openid+"&encryOpenid="+encryOpenid+"&sign="+sign);
+							 BaseForm baseForm = new BaseForm();
+							 baseForm.setEncryOpenid(encryOpenid);
+							 baseForm.setSign(sign);
+							 baseForm.setOpenid(openid);
+							 request.getSession().setAttribute("baseForm",baseForm);
+							 logger.error("成功设置baseForm");
+							 return true;
+							 //userInfo 后续有需要可以加入其它参数，存于redis服务器
+						} else {
+							logger.error("openid 获取失败：");
+							logger.error("JSONOBJ:" + jsonObject.toString());
+							return false;
+						}
+					}	
+				}else{
+					BaseForm baseForm = (BaseForm) baseFormobj;
+					logger.error("baseFormobj非空，已登录");
+					logger.error("openid="+baseForm.getOpenid()+"&encryOpenid="+baseForm.getEncryOpenid()+"&sign="+baseForm.getSign());
+					return true;
+				}
+				
+//				WxFansForm wxFansForm = new WxFansForm();
+//			 	WxFans wxFans = new WxFans();
+//			 	wxFans.setCreateTime(new Date());
+//			 	wxFans.setHeadPhotoUrl("urls");
+//			 	wxFans.setHeadUrl("urls");
+//			 	wxFans.setNickName("测试");
+//			 	wxFans.setOpenId("abcdefghjkfxsjaljaljf");
+//			 	wxFans.setPerfectStatus(0);
+//			 	wxFans.setSmokeBean(0L);
+//			 	wxFans.setSex(1L);
+//			 	wxFans.setStatus(1L);
+//			 	wxFans.setVisitConfirm("1");
+//			 	wxFansForm.setWxFans(wxFans);
+//			 	BaseDto baseDto = wxFansService.saveFans(wxFansForm);
+//			 	if("10000".equals(baseDto.getResultCode())){
+//			 		logger.error(baseDto.getErrorMsg());
+//			 	}
+//			 	
+////		 String openid = "ooku7jhlqnvuS5lahZQQNWKK2cng";
+//		 String openid = wxFans.getOpenId();
+//		 String encryOpenid = ThreeDES.encode(openid.getBytes());
+//		 String sign = MD5Util.encode2hex(encryOpenid);
+//		 logger.error("openid="+openid+"&encryOpenid="+encryOpenid+"&sign="+sign);
+//		
+//		 BaseForm baseForm = new BaseForm();
+//		 baseForm.setEncryOpenid(encryOpenid);
+//		 baseForm.setSign(sign);
+//		 baseForm.setOpenid(openid);
+//		 request.getSession().setAttribute("baseForm",baseForm);
+//		 return true;
+		
+	}
+
+}

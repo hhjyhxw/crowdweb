@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/wx/util
+END
+SignatureUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/wx/util/SignatureUtil.java
+END
+XmlMessageUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/wx/util/XmlMessageUtil.java
+END
+CommonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/wx/util/CommonUtil.java
+END
+MyX509TrustManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/wx/util/MyX509TrustManager.java
+END
+WeChatConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/wx/util/WeChatConstants.java
+END

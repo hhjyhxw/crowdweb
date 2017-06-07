@@ -1,0 +1,20 @@
+# qq base information
+qq.base.app.id=101310087
+qq.base.app.key=881bde35939e082ce9a43b79ee8a9094
+qq.base.redirect.url=https://h5.xcloudtrip.com/qq_oauth2_login
+
+
+# get Authorization Code
+qq.authorization.code.get.url=https://graph.qq.com/oauth2.0/authorize
+
+#get access token 
+qq.access.token.get.url=https://graph.qq.com/oauth2.0/token
+
+# refresh access token
+qq.refresh.access.token.get.url=https://graph.qq.com/oauth2.0/token
+
+# get user openid
+qq.user.openid.get.url=https://graph.qq.com/oauth2.0/me
+
+# get  user info
+qq.user.info.get.url=https://graph.qq.com/user/get_user_info

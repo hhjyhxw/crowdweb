@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gxzy/!svn/ver/12917/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto
+END
+AwardRecordListDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gxzy/!svn/ver/12246/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/AwardRecordListDto.java
+END
+RaiseQueryDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseQueryDto.java
+END
+RaiseOrderListDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gxzy/!svn/ver/12043/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseOrderListDto.java
+END
+WxFansQueryDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/WxFansQueryDto.java
+END
+RaiseListDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseListDto.java
+END
+RaiseEntityDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseEntityDto.java
+END
+RaiseOrderItemsDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gxzy/!svn/ver/12323/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseOrderItemsDto.java
+END
+ExportExcleDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/ExportExcleDto.java
+END
+AwardRecordVoDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gxzy/!svn/ver/12330/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/AwardRecordVoDto.java
+END
+UserPrizeInfoDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gxzy/!svn/ver/12155/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/UserPrizeInfoDto.java
+END
+WxFansRaiseInfoDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gxzy/!svn/ver/12362/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/WxFansRaiseInfoDto.java
+END
+BaseDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/BaseDto.java
+END
+LuckyOnesDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/LuckyOnesDto.java
+END
+RecordDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RecordDto.java
+END
+LuckyNoListDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/LuckyNoListDto.java
+END
+AwardRecordExportExcleDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gxzy/!svn/ver/12149/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/AwardRecordExportExcleDto.java
+END
+AddressEditSucessDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gxzy/!svn/ver/12000/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/AddressEditSucessDto.java
+END
+RaiseOrderDetailDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/gxzy/!svn/ver/12155/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseOrderDetailDto.java
+END
+AwardRecordQueryDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/AwardRecordQueryDto.java
+END
+PrizeRecordListDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/PrizeRecordListDto.java
+END
+EmsTrackInfoDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/EmsTrackInfoDto.java
+END
+PrizeRecordEntityDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gxzy/!svn/ver/12917/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/PrizeRecordEntityDto.java
+END
+RaiseDetailDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gxzy/!svn/ver/12343/zl/zl_crowd_funding/crowdweb/src/main/java/com/luckcloud/h5/dto/RaiseDetailDto.java
+END

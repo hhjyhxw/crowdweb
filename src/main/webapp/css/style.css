@@ -1,0 +1,154 @@
+body
+{
+	font-size: 12px;
+	FONT-FAMILY: "宋体", Arial;
+	margin: 0;
+	overflow-x:hidden;
+	overflow-y:auto;
+	SCROLLBAR-HIGHLIGHT-COLOR: #0067AA;
+	SCROLLBAR-SHADOW-COLOR: #0067AA;
+	SCROLLBAR-ARROW-COLOR: #0067AA;
+	SCROLLBAR-FACE-COLOR: #F1F9FC;
+	SCROLLBAR-TRACK-COLOR: #F1F9FC;
+	SCROLLBAR-3DLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-DARKSHADOW-COLOR: #FFFFFF;
+	color:#707070;line-height:180%;
+
+}
+
+font
+{
+	line-height: 150%;
+}
+
+TD {
+FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif;line-height:150%;color:#555555;
+}
+
+span {
+FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif;line-height:150%;
+}
+
+.table
+{
+	border-collapse: collapse;
+	WORD-WRAP: break-word;
+	border: 1px solid #CCCCCC;	/*line-height:150%;*/
+}
+
+.table5 
+{
+	border-width:1px;
+	border-style:solid;
+	border-collapse:collapse;
+    cellPadding:4px;
+	word-wrap:break-word;
+	font-size:12px;
+	border-color:#0067AA;
+	border-colorLight:#0067AA;
+	border-colorDark:#FFFFFF;
+	table-layout:fixed;word-break:break-all;
+}
+
+.table5title 
+{
+	border-width:1px;
+	border-style:solid;
+	border-collapse:collapse;
+    cellPadding:4px;
+	word-wrap:break-word;
+	font-size:12px;
+	color:#555555;
+	border-color:#0067AA;
+	border-colorLight:#0067AA;
+	border-colorDark:#FFFFFF;
+	background-image: url(../images/title01.gif);
+	text-align:center;
+    font-weight:normal;
+}
+.font12
+{
+color:red;
+font-size: 12px;
+}
+
+
+.button_02 {
+background-image:   url("../images/button_03.gif");cursor: pointer; padding-top: 2px;  width:66px; height:23px; border:0;color:#DDD;
+}
+
+.button_03 {
+background-image:   url("../images/button_04.gif");cursor: pointer;  padding-top: 2px; width:76px; height:23px; border:0;color:#DDD;
+}
+
+
+/* 超级链接样式 */
+a:link, a:visited, a:active
+{
+	color:#555555;
+	text-decoration: none;
+}
+a:hover
+{
+	color: red;
+	text-decoration: underline;
+}
+
+/* 列表中行的超级链接样式 */
+a.linkStyle:link, a.linkStyle:visited, a.linkStyle:active
+{
+	color: #1E4FA0;
+	text-decoration: none;
+}
+a.linkStyle:hover
+{
+	color: red;
+	text-decoration: underline;
+}
+
+
+/* 主体部分中的标题字体及大小样式 */
+.body_title
+{
+	font-size: 14px;
+}
+/*跳转*/
+.button_goto{
+	setvalue: expression(this.value="");
+	background-image:   url("../images/button_goto.gif");cursor: pointer;  padding-top: 2px; width:23px; height:23px; border:0;
+}
+
+/* 表格背景色 */
+.bgcolor5
+{
+	background-color:#F1F9FC;
+}
+
+
+/* ---------------- 定义背景色End ---------------- */
+
+/*数据表奇数行样式*/
+.oddRow {
+	background: #EFEFEF;
+	border-color:#0067AA;
+	border-colorLight:#0067AA;
+	border-colorDark:#0067AA;
+}
+
+/*数据表偶数行样式*/
+.evenRow {
+	background: #FFFFFF;
+	border-color:#0067AA;
+	border-colorLight:#0067AA;
+	border-colorDark:#0067AA;
+}
+
+/*活动行样式*/
+.activityRow {
+	background: #0EF;
+	border-color:#0067AA;
+	border-colorLight:#0067AA;
+	border-colorDark:#0067AA;
+}
+
+

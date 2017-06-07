@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/gxzy/!svn/ver/12961/zl/zl_crowd_funding/crowdweb/src/main/resources
+END
+conf.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gxzy/!svn/ver/12961/zl/zl_crowd_funding/crowdweb/src/main/resources/conf.properties
+END
+weibo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/resources/weibo.properties
+END
+logback.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/resources/logback.xml
+END
+wx.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/resources/wx.properties
+END
+qq.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gxzy/!svn/ver/11901/zl/zl_crowd_funding/crowdweb/src/main/resources/qq.properties
+END
